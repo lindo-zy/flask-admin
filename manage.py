@@ -1,13 +1,11 @@
 #!/usr/bin/python3
 # -*- coding:utf-8 -*-
-
-from flask import Flask
 from flask_script import Manager
 
-from config import Config
+from app import create_app
+from config import project_config
 
-app = Flask(__name__)
-app.config.from_object(Config)
+app = create_app(project_config['development'])
 
 manager = Manager(app)
 
